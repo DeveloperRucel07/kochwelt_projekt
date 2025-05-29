@@ -3,5 +3,119 @@
     padding: 0;
 }
 body{
+    /* width: 80%; */
     margin: 0 auto;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+    box-shadow:  0 0 0 2px #000;
+}
+
+header img{
+    height: 100px;
+    margin-left: 20px;
+}
+nav{
+    display: flex;
+    margin-right: 20px;
+}
+
+nav a{
+    text-decoration: none;
+    margin: 10px;
+    font-size: 20px;
+    color: black;
+}
+main{
+    margin: 0 auto;
+    /* width: 90%; */
+    align-items: center;
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+}
+
+.rezept, .unterschied{
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    flex-direction: row;
+    margin: 30px;
+}
+.rezept img, .unterschied img{
+    width: 500px;
+    height: 300px;
+    margin-right: 50px;
+    border-radius: 5px;
+}
+.rezept-text{
+    /* display: flex; */
+    flex-direction: column;
+    
+}
+.menus{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    background-color: gray;
+    color: black;
+}
+.menus h3{
+    text-align: center;
+}
+
+.menu_list{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+
+}
+ .menu img{
+    width: 100px;
+    height: 100px;
+}
+
+.was_besser{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+ .was_besser h3{
+    text-align: center;
+ }
+
+
+
+footer{
+    position: fixed ;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    color: white;
+    background-color: #5b4d4d;
+    height: 70px;
+}
+
+.social_media{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.social_media a{
+    margin: 20px;
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
 }
