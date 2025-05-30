@@ -6,22 +6,26 @@
     <link rel="icon" type="image/png" href="./img/logo_small.png" />
     <title>Kochwelt</title>
     <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   </head>
   <body>
     <header>
       <img src="./img/logo.png" alt="Logo Kochwelt" />
       <nav>
         <a href="#">Start</a>
-        <a href="#">Rezept des Tages</a>
+        <a href="#menu_tag">Rezept des Tages</a>
         <a href="#">Kontakt</a>
         <a href="#">Impressum</a>
       </nav>
     </header>
     <main>
+
       <section class="rezept">
         <img src="./img/croissant.jpg" alt=" croissant" />
         <div class="rezept-text">
-          <h3>Französische Croissants</h3>
+          <h3 class="title3">Französische Croissants</h3>
           <p>
             Schmackhafte Croissants können auch zu Hause sehr einfach gebacken
             werden. Mit circa 30 minuten Aufwand kannst du ein wundervolles
@@ -30,8 +34,9 @@
           <button>Rezept öffnen</button>
         </div>
       </section>
-      <section class="menus">
-        <h3>Lust auf was neues?</h3>
+
+      <section class="menus" id="menu_tag">
+        <h3 class="title3">Lust auf was neues?</h3>
         <div class="menu_list">
           <div class="menu">
             <img src="./img/croissant.jpg" alt="croissant" />
@@ -48,7 +53,7 @@
         </div>
       </section>
       <section class="was_besser">
-        <h3>Hamburger vs. Döner- was ist besser?</h3>
+        <h3 class="title3">Hamburger vs. Döner- was ist besser?</h3>
         <div class="unterschied">
           <p>
             Ein Hamburger besticht durch seine saftige Fleischpatty (meist

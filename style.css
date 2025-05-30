@@ -3,69 +3,97 @@
     padding: 0;
 }
 body{
-    /* width: 80%; */
-    margin: 0 auto;
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
 }
 
 header{
+    top: 0;
+    left: 0;
+    right: 0;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
     width: 100%;
-    height: 70px;
+    height: 80px;
     box-shadow:  0 0 0 2px #000;
 }
 
 header img{
-    height: 100px;
-    margin-left: 20px;
+    height: 80px;
+    margin-left: 50px;
 }
 nav{
     display: flex;
-    margin-right: 20px;
+    margin-right: 50px;
 }
 
 nav a{
     text-decoration: none;
-    margin: 10px;
+    margin-left: 30px;
     font-size: 20px;
     color: black;
 }
 main{
     margin: 0 auto;
-    /* width: 90%; */
     align-items: center;
     margin-bottom: 50px;
     padding-bottom: 50px;
 }
 
-.rezept, .unterschied{
+.rezept{
     display: flex;
     justify-content: center;
-    /* align-items: center; */
     flex-direction: row;
-    margin: 30px;
+    margin: 0 auto;
+    padding: 90px;
 }
-.rezept img, .unterschied img{
+.rezept img{
     width: 500px;
     height: 300px;
     margin-right: 50px;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 .rezept-text{
-    /* display: flex; */
-    flex-direction: column;
-    
+    flex-direction: column; 
+
+}
+.title3{
+    font-size: 40px;
+    margin: 15px;
+}
+
+.rezept-text p{
+    margin-top: 0;
+    font-size: 20px;
+    margin: 15px;
+}
+
+.rezept-text button{
+    margin: 15px;
+    padding: 10px;
+    padding-left: 70px;
+    padding-right: 70px;
+    margin-top: 70px;
+    font-size: 20px;
+    background-color: #4E9525;
+    border: none;
+    color: white;
 }
 .menus{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-direction: column;
-    background-color: gray;
+    background-color: rgb(205, 202, 202);
     color: black;
+    padding: 40px;
 }
 .menus h3{
     text-align: center;
+    margin-bottom: 30px;
+    margin-block-start: 0;
+    margin-block-end: 0;
 }
 
 .menu_list{
@@ -73,11 +101,18 @@ main{
     justify-content: space-around;
     flex-direction: row;
     align-items: center;
+    margin: 30px;
 
 }
- .menu img{
-    width: 100px;
-    height: 100px;
+.menu img{
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+}
+.menu p{
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
 }
 
 .was_besser{
@@ -85,12 +120,25 @@ main{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 30px;
 }
  .was_besser h3{
     text-align: center;
- }
+    margin-bottom: 0;
+}
+.unterschied{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin: 30px;
+}
 
-
+.unterschied img{
+    width: 200px;
+    height: 200px;
+    margin-right: 50px;
+    border-radius: 10px;
+}
 
 footer{
     position: fixed ;
@@ -105,11 +153,16 @@ footer{
     height: 70px;
 }
 
+footer img{
+    margin-left: 50px;
+}
+
 .social_media{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    margin-right: 50px;
     
 }
 
