@@ -5,23 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="./img/logo_small.png" />
     <title>Kochwelt</title>
+    <link rel="stylesheet" href="./fontawesome-free-6.7.2-web/fontawesome-free-6.7.2-web/css/all.css">
     <link rel="stylesheet" href="./style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   </head>
   <body>
+
     <header>
       <div class="header">
         <img src="./img/logo.png" alt="Logo Kochwelt" />
         <nav>
           <a href="#">Start</a>
-          <a href="#menu_tag">Rezept des Tages</a>
+          <a href="#menu_tag" class="active_item">Rezept des Tages</a>
           <a href="#">Kontakt</a>
           <a href="#">Impressum</a>
         </nav>
       </div>
     </header>
+
     <main>
 
       <section class="rezept">
@@ -31,9 +34,9 @@
           <p>
             Schmackhafte Croissants können auch zu Hause sehr einfach gebacken
             werden. Mit circa 30 minuten Aufwand kannst du ein wundervolles
-            Frühstück zauben
+            Frühstück zaubern.
           </p>
-          <button>Rezept öffnen</button>
+          <button id="rezept_1">Rezept öffnen</button>
         </div>
       </section>
 
@@ -85,14 +88,14 @@
       <div class="footer">
         <img src="./img/logo.png" alt="Logo" />
         <div class="social_media">
-          <a href="http://">facebook</a>
-          <a href="http://">instagram</a>
-          <a href="http://">tiktok</a>
-          <a href="http://">discord</a>
+          <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+          <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.tiktok.com" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="https://www.discord.com" target="_blank"><i class="fa-brands fa-discord"></i></a>
         </div>
       </div>
-      
     </footer>
+    <!-- <script src="https://kit.fontawesome.com/2692899e08.js" crossorigin="anonymous"></script>  -->
     <script src="./script.js"></script>
   </body>
 </html>
