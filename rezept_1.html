@@ -1,31 +1,23 @@
 <!DOCTYPE html>
-<html lang="de" onload="render()">
-  <head class="head">
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="./img/logo_small.png" />
-    <title>Rezept 1</title>
-    <link rel="stylesheet" href="./style.css" />
-    <link
-      rel="stylesheet"
-      href="./fontawesome-free-6.7.2-web/fontawesome-free-6.7.2-web/css/all.css"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body id="body" onload="render()">
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rezept-01</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./fontawesome-free-6.7.2-web/fontawesome-free-6.7.2-web/css/all.css">
+</head>
+  <body id="body">
+    <header id="header">
 
-    <!-- <main class="main_rezept">
+    </header>
+    <main class="main_rezept">
       <div class="banner">
         <h3 class="title3">Hähnchen-Döner</h3>
         <img src="./img/haehnchen-doener.webp" alt="haehnchen-doener" />
         <p>
           <span><i class="fa-regular fa-clock"></i>15min</span>
-          <span><i class="fa-solid fa-signal"></i>simple</span>
+          <span><i class="fa-solid fa-brain"></i></i>simple</span>
           <span><i class="fa-solid fa-calendar"></i>31.05.2025</span>
           <span><i class="fa-solid fa-chart-column"></i>393kcal</span>
         </p>
@@ -39,30 +31,13 @@
           value="1"
           min="1"
         />
-        <button>Portionen</button>
+        <button id="portion_calculateBtn">Portionen</button>
       </div>
-      <table>
+      <table id="ingredient_table" class="ingredient_table">
         <tr>
           <td></td>
         </tr>
-        <tr>
-          <td><span>1</span> Alfreds Futterkiste</td>
-        </tr>
-        <tr>
-          <td>Centro comercial Moctezuma</td>
-        </tr>
-        <tr>
-          <td>Ernst Handel</td>
-        </tr>
-        <tr>
-          <td>Island Trading</td>
-        </tr>
-        <tr>
-          <td>Laughing Bacchus Winecellars</td>
-        </tr>
-        <tr>
-          <td>Magazzini Alimentari Riuniti</td>
-        </tr>
+
       </table>
 
         <div class="zubereitung">
@@ -83,12 +58,14 @@
         <div class="ersteller">
             <h4>Rezept erstellt von</h4>
             <div class="profile">
-                <img src="./img/profile.png" alt="profile">
+                <img src="./img/profile.jpg" alt="profile">
                 <p>Rucel Dev</p>
             </div>
         </div>
-    </main> -->
+    </main>
+    <footer id="footer">
 
+    </footer>
     <script src="./script.js"></script>
   </body>
 </html>

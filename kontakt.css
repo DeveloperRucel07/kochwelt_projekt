@@ -1,0 +1,56 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form{
+    max-width: 1440px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.title3{
+    text-decoration: underline;
+}
+
+.form input{
+    margin: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    width: 600px;
+}
+
+textarea{
+    margin: 5px;
+    width: 600px;
+    border-radius: 10px;
+    padding: 10px;
+    resize: none;
+}
+textarea:focus{
+    outline: none;
+}
+
+.valideinput{
+    outline: 2px solid #4E9525;
+}
+
+.notvalideinput{
+    outline: 2px solid #FF0000;
+}
+
+.sendMessage{
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+    width: 620px;
+    border-radius: 10px;
+}
