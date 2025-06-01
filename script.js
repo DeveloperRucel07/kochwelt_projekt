@@ -98,10 +98,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-
-
-
-
 let rezept_1Btn = document.getElementById('rezept_1');
 
 rezept_1Btn.addEventListener('click', function(){
