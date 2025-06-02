@@ -3,14 +3,14 @@ let body = document.getElementById('body');
 let headerTag = `
       <div class="header">
         <a href="./index.html"><img src="./img/logo.png" alt="Logo Kochwelt" /></a>
-        <nav>
+        <nav class="burger_menu" id="burger_menu">
           <a href="./index.html">Start</a>
           <a href="#menu_tag" class="active_item">Rezept des Tages</a>
           <a href="./kontakt.html">Kontakt</a>
           <a href="#">Impressum</a>
+          </nav>
           <button class="burger" id="burger_open"><i class="fa-solid fa-bars"></i></button>
-          <button class="burger" id="burger_close"><i class="fa-solid fa-bars"></i></button>
-        </nav>
+          <button class="burger burger-x" id="burger_close"><i class="fa-solid fa-x"></i></button>
       </div>
 `;
 
@@ -34,9 +34,14 @@ function renderHeader(){
   document.getElementById("header").innerHTML = headerTag;
 }
 
+
+
 function renderFooter(){
   document.getElementById("footer").innerHTML = footerTag;
 }
+
+
+
 
 let portion = 1;
 let recipes = {
@@ -94,14 +99,28 @@ document.addEventListener("DOMContentLoaded", function() {
       });
 
     updateIngredients(selectedRecipe, portion); 
-});
+
+
+let burger_open = document.getElementById('burger_open');
+let burger_close = document.getElementById('burger_close');
+
+burger_open.addEventListener('click', function(){
+  alert("Hey i'm already on bord");
+})
 
 
 
+  
 let rezept_1Btn = document.getElementById('rezept_1');
 
 rezept_1Btn.addEventListener('click', function(){
     window.open('./rezept_1.html');
 }
-);
+);  
+
+
+});
+
+
+
 

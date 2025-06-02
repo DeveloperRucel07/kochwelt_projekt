@@ -15,12 +15,7 @@ sendMessageBtn.addEventListener('click', function() {
     valideName(name_user);
     valideEmail(email_user);
     valideBetreff(betreff_user);
-
-    console.log(valideEmail);
-
-
-
-
+    valideMessage(message_user)
 
     if(validator == true && check >= 3) {
         sendmail();
@@ -79,7 +74,7 @@ function valideEmail(email) {
     validator = true;
     check+=1;
     }else {
-        Email.classList.add('notvalideinput');
+        Usermail.classList.add('notvalideinput');
         validator = false;
     }
 }

@@ -332,26 +332,28 @@ footer{
 
 }
 
+.nav_active{
+    display: none;
+}
 
-@media (max-width:750px) {
+
+@media (max-width:800px) {
     .header img{
         height: 70px;
         margin-bottom: 15px;
     }
-    nav{
+    .burger_menu{
         display: none;
         flex-direction: column;
         align-items: start;
     }
     
-
-
-    /* nav a{
-        
-    } */
-
     .burger{
         display: block;
+    }
+
+    .burger-x{
+        display: none !important;
     }
     
 }
