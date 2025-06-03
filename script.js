@@ -1,4 +1,4 @@
-let body = document.getElementById('body');
+let body = document.getElementById("body");
 
 let headerTag = `
       <div class="header">
@@ -8,9 +8,9 @@ let headerTag = `
           <a href="#menu_tag" class="active_item">Rezept des Tages</a>
           <a href="./kontakt.html">Kontakt</a>
           <a href="#">Impressum</a>
-          </nav>
+        </nav>
           <button class="burger" id="burger_open"><i class="fa-solid fa-bars"></i></button>
-          <button class="burger burger-x" id="burger_close"><i class="fa-solid fa-x"></i></button>
+          <button class="burger" id="burger_close"><i class="fa-solid fa-x"></i></button>
       </div>
 `;
 
@@ -27,100 +27,92 @@ let footerTag = `
       </div>
 `;
 
-
-
-
-function renderHeader(){
+function renderHeader() {
   document.getElementById("header").innerHTML = headerTag;
 }
 
-
-
-function renderFooter(){
+function renderFooter() {
   document.getElementById("footer").innerHTML = footerTag;
 }
 
-
-
-
 let portion = 1;
 let recipes = {
-    "Hähnchen-Döner": {
-        "Hähnchenbrust": { quantity: 150, unit: "g" },
-        "Paprikapulver": { quantity: 1, unit: "EL" },
-        "Salz": { quantity: "nach Geschmack", unit: "" },
-        "Pfeffer": { quantity: "nach Geschmack", unit: "" },
-        "Paprikaschote": { quantity: 1, unit: "Stück" },
-        "Tomaten": { quantity: 2, unit: "Stück" },
-        "Gurke": { quantity: 1, unit: "Stück" },
-        "Zucker": { quantity: "nach Geschmack", unit: "" },
-        "Zitronensaft": { quantity: 10, unit: "ml" },
-        "Dill": { quantity: "nach Geschmack", unit: "" },
-        "Petersilie": { quantity: "nach Geschmack", unit: "" },
-        "Knoblauch": { quantity: 1, unit: "Zehe" },
-        "Chilischote": { quantity: 1, unit: "Stück" },
-        "Joghurt": { quantity: 1, unit: "EL" }
-    },
-
+  "Hähnchen-Döner": {
+    Hähnchenbrust: { quantity: 150, unit: "g" },
+    Paprikapulver: { quantity: 1, unit: "EL" },
+    Salz: { quantity: "nach Geschmack", unit: "" },
+    Pfeffer: { quantity: "nach Geschmack", unit: "" },
+    Paprikaschote: { quantity: 1, unit: "Stück" },
+    Tomaten: { quantity: 2, unit: "Stück" },
+    Gurke: { quantity: 1, unit: "Stück" },
+    Zucker: { quantity: "nach Geschmack", unit: "" },
+    Zitronensaft: { quantity: 10, unit: "ml" },
+    Dill: { quantity: "nach Geschmack", unit: "" },
+    Petersilie: { quantity: "nach Geschmack", unit: "" },
+    Knoblauch: { quantity: 1, unit: "Zehe" },
+    Chilischote: { quantity: 1, unit: "Stück" },
+    Joghurt: { quantity: 1, unit: "EL" },
+  },
 };
 
-let selectedRecipe = "Hähnchen-Döner"; 
+let selectedRecipe = "Hähnchen-Döner";
 
-document.addEventListener("DOMContentLoaded", function() {
-    renderHeader();
-    renderFooter();
+document.addEventListener("DOMContentLoaded", function () {
+  renderHeader();
+  renderFooter();
 
-    let tableBody = document.getElementById("ingredient_table");
+  let burger_open = document.getElementById("burger_open");
+  let burger_close = document.getElementById("burger_close");
+  let nav = document.getElementById('burger_menu');
 
-    function updateIngredients(recipeName, portion) {
-        tableBody.innerHTML = ""; 
-        let ingredients = recipes[recipeName];
+  burger_open.addEventListener("click", function () {
+    burger_open.style.display = "none";
+    burger_close.style.display = "block";
+    nav.classList.toggle('nav_active');
+    
+  });
 
-        for (const [ingredient, { quantity, unit }] of Object.entries(ingredients)) {
-          if(!portion){
-            const row = document.createElement("tr");
-            row.innerHTML = `<td><span>${quantity} ${unit}</span> ${ingredient}</td>`;
-            tableBody.appendChild(row);
-          }else{
-            let adjustedQuantity = (typeof quantity === "number") ? quantity * portion : quantity;
-            const row = document.createElement("tr");
-            row.innerHTML = `<td><span>${adjustedQuantity} ${unit}</span> ${ingredient}</td>`;
-            tableBody.appendChild(row);
-          }
-            
-        }
+  burger_close.addEventListener("click", function () {
+    burger_close.style.display = "none";
+    burger_open.style.display = "block";
+    nav.classList.toggle('nav_active');
+  });
+
+  let rezept_1Btn = document.getElementById("rezept_1");
+
+  rezept_1Btn.addEventListener("click", function () {
+    window.open("./rezept_1.html");
+  });
+
+  let tableBody = document.getElementById("ingredient_table");
+
+  function updateIngredients(recipeName, portion) {
+    tableBody.innerHTML = "";
+    let ingredients = recipes[recipeName];
+
+    for (const [ingredient, { quantity, unit }] of Object.entries(
+      ingredients
+    )) {
+      if (!portion) {
+        const row = document.createElement("tr");
+        row.innerHTML = `<td><span>${quantity} ${unit}</span> ${ingredient}</td>`;
+        tableBody.appendChild(row);
+      } else {
+        let adjustedQuantity =
+          typeof quantity === "number" ? quantity * portion : quantity;
+        const row = document.createElement("tr");
+        row.innerHTML = `<td><span>${adjustedQuantity} ${unit}</span> ${ingredient}</td>`;
+        tableBody.appendChild(row);
+      }
     }
+  }
 
-    const calculate = document.getElementById("portion_calculateBtn");
-    calculate.addEventListener('click', function() {
-          let number_portion = document.getElementById('portion_number').value;
-          portion = parseInt(number_portion);
-          updateIngredients(selectedRecipe, portion);
-      });
+  const calculate = document.getElementById("portion_calculateBtn");
+  calculate.addEventListener("click", function () {
+    let number_portion = document.getElementById("portion_number").value;
+    portion = parseInt(number_portion);
+    updateIngredients(selectedRecipe, portion);
+  });
 
-    updateIngredients(selectedRecipe, portion); 
-
-
-let burger_open = document.getElementById('burger_open');
-let burger_close = document.getElementById('burger_close');
-
-burger_open.addEventListener('click', function(){
-  alert("Hey i'm already on bord");
-})
-
-
-
-  
-let rezept_1Btn = document.getElementById('rezept_1');
-
-rezept_1Btn.addEventListener('click', function(){
-    window.open('./rezept_1.html');
-}
-);  
-
-
+  updateIngredients(selectedRecipe, portion);
 });
-
-
-
-

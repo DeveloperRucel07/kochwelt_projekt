@@ -4,9 +4,6 @@
     scroll-behavior: smooth;
 }
 body{
-    
-    margin: 0;
-    padding: 0;
     font-family: 'Raleway', sans-serif;
 }
 header{
@@ -48,16 +45,25 @@ nav a:hover, .active_item{
 
 .burger{
     display: none;
-    margin: 15px;
+    margin-bottom: 10px;
     width: 70px;
     font-size: 40px;
     height: 70px;
     border: none;
     background-color: transparent;
 }
-
-.burger_active{
+#burger_open, #burger_close{
+    display: none;
+}
+.toggle_open{
     display: block;
+}
+
+.toggle_close{
+    display: none;
+}
+.desactive_nav{
+    display: none;
 }
 
 main{
@@ -67,23 +73,26 @@ main{
     padding-bottom: 50px;
 }
 
+.rezept_tag{
+    max-width: 1440px;
+    margin:0 auto;
+}
+
 .rezept{
     display: flex;
     justify-content: center;
     flex-direction: row;
-    max-width: 1440px;
-    margin: auto;
     padding-top: 90px;
     padding-bottom: 90px;
 }
 .rezept img{
     width: 500px;
     height: 300px;
-    margin-right: 20px;
     border-radius: 10px;
 }
 .rezept-text{
-    flex-direction: column; 
+    flex-direction: column;
+    margin-left: 40px; 
 }
 .title3{
     font-size: 40px;
@@ -342,18 +351,79 @@ footer{
         height: 70px;
         margin-bottom: 15px;
     }
+
     .burger_menu{
         display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: #5b4d4d;
         flex-direction: column;
+        margin-top: 80px;
         align-items: start;
     }
-    
-    .burger{
-        display: block;
+    .nav_active{
+        display: flex;
     }
 
-    .burger-x{
-        display: none !important;
+    #burger_open{
+        display: block;
     }
-    
+    #burger_close{
+        display: none;
+    }
+
+    .title3{
+        font-size: 30px;
+        margin: 10px;
+    }
+
+    .rezept{
+        flex-direction: column;
+        align-items: center;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .rezept img{
+        width: 90%;
+        padding: 10px;
+        border-radius: 10px !important;
+        height: auto;
+
+    }
+    .rezept-text{
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+    }
+
+    .menu_list{
+        flex-wrap: wrap;
+    }
+
+    .menu{
+        margin: 10px;
+    }
+    .unterschied{
+        align-items: center;
+        flex-direction: column-reverse;
+    }
+
+    .unterschied img{
+        width: 90%;
+        height: auto;
+    }
+    .footer img{
+        height: 40px;
+        margin-left: 10px;
+    }
+
+    .social_media{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-right: 0;
+    }
+
 }
