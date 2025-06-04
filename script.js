@@ -4,10 +4,10 @@ let headerTag = `
       <div class="header">
         <a href="./index.html"><img src="./img/logo.png" alt="Logo Kochwelt" /></a>
         <nav class="burger_menu" id="burger_menu">
-          <a href="./index.html" class="active_item">Start</a>
-          <a href="./rezept_1.html">Rezept des Tages</a>
-          <a href="./kontakt.html">Kontakt</a>
-          <a href="./impressum.html">Impressum</a>
+          <a href="./index.html" class="menu_item active_item">Start</a>
+          <a href="./rezept_1.html" class="menu_item">Rezept des Tages</a>
+          <a href="./kontakt.html" class="menu_item">Kontakt</a>
+          <a href="./impressum.html" class="menu_item">Impressum</a>
         </nav>
           <button class="burger" id="burger_open"><i class="fa-solid fa-bars"></i></button>
           <button class="burger" id="burger_close"><i class="fa-solid fa-x"></i></button>
@@ -61,6 +61,9 @@ document.addEventListener("DOMContentLoaded", function () {
   renderHeader();
   renderFooter();
 
+
+
+
   let burger_open = document.getElementById("burger_open");
   let burger_close = document.getElementById("burger_close");
   let nav = document.getElementById('burger_menu');
@@ -77,6 +80,19 @@ document.addEventListener("DOMContentLoaded", function () {
     burger_open.style.display = "block";
     nav.classList.toggle('nav_active');
   });
+  
+  let menuItems = document.querySelectorAll(".menu_item");
+  menuItems.forEach(item => {
+      item.addEventListener("click", () => {
+        // menuItems.forEach(element => element.classList.remove("active_item"));
+        console.log(item.value);
+        item.classList.add("active_item");
+      });
+  });
+
+  
+
+
 
   let tableBody = document.getElementById("ingredient_table");
 
@@ -90,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
         row.innerHTML = `<td><span>${quantity} ${unit}</span> ${ingredient}</td>`;
         tableBody.appendChild(row);
       } else {
-        let adjustedQuantity = typeof quantity === "number" ? quantity * portion : quantity;
+        let adjustedQuantity =typeof quantity === "number" ? quantity * portion : quantity;
         const row = document.createElement("tr");
         row.innerHTML = `<td><span>${adjustedQuantity} ${unit}</span> ${ingredient}</td>`;
         tableBody.appendChild(row);

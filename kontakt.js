@@ -3,6 +3,7 @@ let Usermail = document.getElementById('email');
 let Betreff = document.getElementById('betreff');
 let Message = document.getElementById('message');
 const sendMessageBtn = document.getElementById('sendMessage');
+let error_message = document.getElementById('error_message');
 
 let validator = false;
 let check = 0;
@@ -21,7 +22,7 @@ sendMessageBtn.addEventListener('click', function() {
         sendmail();
     }
     else{
-        alert("Bitte füllen Sie alle Felder aus");
+        error_message.classList.add('dblock_message');
     }
 
 });

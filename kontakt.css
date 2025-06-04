@@ -54,7 +54,14 @@ textarea:focus{
     width: 620px;
     border-radius: 10px;
 }
-
+.error_message{
+    display: none;
+    color: red;
+    font-size: 20px;
+}
+.dblock_message{
+    display: block;
+}
 
 @media (max-width:700px) {
     .form input{
