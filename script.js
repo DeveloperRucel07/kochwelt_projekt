@@ -4,10 +4,10 @@ let headerTag = `
       <div class="header">
         <a href="./index.html"><img src="./img/logo.png" alt="Logo Kochwelt" /></a>
         <nav class="burger_menu" id="burger_menu">
-          <a href="./index.html">Start</a>
-          <a href="#menu_tag" class="active_item">Rezept des Tages</a>
+          <a href="./index.html" class="active_item">Start</a>
+          <a href="./rezept_1.html">Rezept des Tages</a>
           <a href="./kontakt.html">Kontakt</a>
-          <a href="#">Impressum</a>
+          <a href="./impressum.html">Impressum</a>
         </nav>
           <button class="burger" id="burger_open"><i class="fa-solid fa-bars"></i></button>
           <button class="burger" id="burger_close"><i class="fa-solid fa-x"></i></button>
@@ -78,28 +78,19 @@ document.addEventListener("DOMContentLoaded", function () {
     nav.classList.toggle('nav_active');
   });
 
-  let rezept_1Btn = document.getElementById("rezept_1");
-
-  rezept_1Btn.addEventListener("click", function () {
-    window.open("./rezept_1.html");
-  });
-
   let tableBody = document.getElementById("ingredient_table");
 
   function updateIngredients(recipeName, portion) {
     tableBody.innerHTML = "";
     let ingredients = recipes[recipeName];
 
-    for (const [ingredient, { quantity, unit }] of Object.entries(
-      ingredients
-    )) {
+    for (const [ingredient, { quantity, unit }] of Object.entries(ingredients)) {
       if (!portion) {
         const row = document.createElement("tr");
         row.innerHTML = `<td><span>${quantity} ${unit}</span> ${ingredient}</td>`;
         tableBody.appendChild(row);
       } else {
-        let adjustedQuantity =
-          typeof quantity === "number" ? quantity * portion : quantity;
+        let adjustedQuantity = typeof quantity === "number" ? quantity * portion : quantity;
         const row = document.createElement("tr");
         row.innerHTML = `<td><span>${adjustedQuantity} ${unit}</span> ${ingredient}</td>`;
         tableBody.appendChild(row);

@@ -91,6 +91,8 @@ main{
     border-radius: 10px;
 }
 .rezept-text{
+    display: flex;
+    justify-content: space-between;
     flex-direction: column;
     margin-left: 40px; 
 }
@@ -105,8 +107,11 @@ main{
     margin: 15px;
 }
 
-.rezept-text button{
+.rezept-text .rezept_link{
     margin: 15px;
+    width: 200px;
+    text-align: center;
+    text-decoration: none;
     padding: 10px;
     padding-left: 70px;
     padding-right: 70px;
@@ -191,7 +196,7 @@ span i{
     margin-right: 5px;
 }
 
-.form{
+.form, .form_rezept{
     display: flex;
     justify-content: start;
     align-items: center;
@@ -199,7 +204,7 @@ span i{
     padding: 8px;
 }
 
-.form button{
+.form button, .form_rezept button{
     margin: 15px;
     padding: 14px;
     margin-left: 0;
@@ -212,7 +217,7 @@ span i{
     border: none;
 
 }
-.form input{
+.form input, .form_rezept input{
     margin: 15px;
     padding-right: 2px;
     margin-right: 0;
@@ -221,7 +226,7 @@ span i{
     padding-right: 0;  
     border: 1px solid grey;
 }
-.form input:focus{
+.form input:focus, .form_rezept input:focus{
     outline: none;
 }
 
@@ -296,6 +301,27 @@ td span{
     margin-right: 20px;
     border-radius: 10px;
 }
+
+.impressum-container{
+    max-width: 1440px;
+    margin: auto;
+    margin-bottom: 50px;
+    padding-top: 10px;
+    padding-bottom: 50px;
+
+}
+.impressum-container h1{
+    color: #4E9525;
+    margin: 5px;
+    padding: 5px;
+}
+
+.impressum-container strong{
+    margin: 5px;
+    padding: 5px;
+}
+
+
 footer{
     position: fixed;
     bottom: 0;
@@ -309,6 +335,7 @@ footer{
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     flex-direction: row;
     align-items: flex-end;
     color: white;
@@ -323,7 +350,7 @@ footer{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     margin-right: 20px;
 }
 
@@ -397,7 +424,18 @@ footer{
         align-items: center;
         margin: auto;
     }
+    .rezept-text .rezept_link{
+        margin: 0;
+        width: 90%;
+        text-align: center;
+        text-decoration: none;
+        padding: 10px;
+        padding-left: 0;
+        padding-right: 0;
+        margin-top: 0;
+        font-size: 16px;
 
+    }
     .menu_list{
         flex-wrap: wrap;
     }
@@ -426,4 +464,78 @@ footer{
         margin-right: 0;
     }
 
+}
+
+@media (max-width: 450px) {
+    
+    .header img{
+        height: 40px;
+        margin-left: 10px;
+    }
+    .burger{
+        font-size: 30px;
+    }
+    .banner{
+        flex-direction: column;
+        justify-content: center;
+
+    }
+
+    .banner img{
+        width: 90%;
+    }
+
+    .icons_fa{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .form_rezept{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 8px;
+    }
+
+    .calculate{
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        width: 90%;
+    }
+
+    .form_rezept button{
+        padding: 8px;
+        padding-left: 45px;
+        padding-right: 45px;
+        font-size: 16px;
+    }
+    .form_rezept input{
+        padding: 8px !important;
+        border-radius:10px;
+        border-radius:10px 0 0 10px;
+    }
+
+
+    .footer img{
+        height: 40px;
+        margin-left: 10px;
+    }
+
+    .social_media{
+        display: flex;
+        justify-content: start;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-right: 0;
+    }
+
+    .social_media a{
+        font-size: 16px;
+        padding-right: 20px;
+        margin-right: 0;
+        margin-left: 0;
+    }
 }
