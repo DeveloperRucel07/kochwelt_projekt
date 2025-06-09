@@ -15,13 +15,24 @@
     <main id="container">
 
         <div class="form">
-            <h2 class="title3">Kontakt Us</h2>
-            <p class="error_message" id="error_message">Bitte füllen Sie alle Felder aus!!!</p>
-            <input type="text" name="name" id="name"  placeholder="Enter your Name">
-            <input type="email" name="email" id="email" placeholder="Enter your Email">
-            <input type="text" name="betreff" id="betreff" placeholder="Enter your Betreff">
-            <textarea name="message" id="message" cols="30" rows="10" placeholder="Enter your Message"></textarea>
-            <button class="sendMessage" id="sendMessage">Send Message</button>
+            <h2 class="title3">Kontaktieren Uns</h2>
+                <label for="name">
+                    Ihre Name: 
+                    <input type="text" name="name" id="name" placeholder="Geben Sie Ihren Namen ein" required>
+                </label>
+                <label for="email">
+                    Ihre Email Adresse: 
+                    <input type="email" name="email" id="email" placeholder="Geben Sie Ihren Email ein" required>
+                </label>
+                <label for="betreff">
+                    Ihre Betreff: 
+                    <input type="text" name="betreff" id="betreff" placeholder="Geben Sie Ihren Betreff ein" required>
+                </label>
+                <label for="message">
+                    Ihre Nachricht: 
+                    <textarea name="message" id="message" cols="30" rows="10" placeholder="Schreiben Sie Eine Nachricht" required></textarea>
+                </label>
+                <button type="button" class="sendMessage" id="sendMessage">Email Senden</button>
         </div>
 
     </main>
