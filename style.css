@@ -72,8 +72,8 @@ nav a:hover, .active_item{
 main{
     flex: 1;
     align-items: center;
-    margin-bottom: 50px;
-    padding-bottom: 50px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
 }
 
 .rezept_tag{
@@ -270,7 +270,7 @@ td span{
 }
 .ersteller{
     margin: 10px;
-    padding-bottom: 50px;
+    padding-bottom: 10px;
 }
 .profile{
     display: flex;
@@ -357,7 +357,6 @@ footer{
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
-    align-items: flex-end;
     color: white;
 }
 
@@ -370,7 +369,7 @@ footer{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: start;
+    align-items: center;
     margin-right: 20px;
 }
 
@@ -407,7 +406,7 @@ footer{
         background-color: #5b4d4d;
         flex-direction: column;
         margin-top: 80px;
-        align-items: start;
+        align-items: flex-start;
     }
     .nav_active{
         display: flex;
@@ -573,7 +572,7 @@ footer{
 
     .social_media{
         display: flex;
-        justify-content: start;
+        justify-content: center;
         flex-direction: row;
         flex-wrap: wrap;
         margin-right: 0;
