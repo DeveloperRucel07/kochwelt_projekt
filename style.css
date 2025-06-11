@@ -70,8 +70,9 @@ nav a:hover, .active_item{
 }
 
 main{
+    width: 100%;
     flex: 1;
-    align-items: center;
+    /* align-items: center; */
     margin-bottom: 0px;
     padding-bottom: 0px;
 }
@@ -173,7 +174,7 @@ main{
 
 .main_rezept{
     max-width: 1440px;
-    margin: auto;
+    margin: auto; 
 }
 .banner{
     padding-bottom: 40px;
@@ -181,7 +182,7 @@ main{
 }
 
 .banner img{
-    width: 96%;
+    width: 98%;
     height: 200px;
     background-position: center;
     object-fit: cover;

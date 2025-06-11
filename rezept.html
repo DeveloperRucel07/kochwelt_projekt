@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="de">
+<head id="head">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tages Rezept</title>
+    <link rel="icon" type="image/png" href="./img/logo_small.png" />
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="./fontawesomekit.js"></script>
+    <script src="./script.js"></script>
+</head>
+  <body id="body">
+    <header id="header">
+
+    </header>
+    <main class="main_rezept">
+      <div class="banner" id="rezept_banner">
+        <h3 class="title3">Hähnchen-Döner</h3>
+        <img src="./img/haehnchen-doener.webp" alt="haehnchen-doener"/>
+        <p class="icons_fa">
+          <span><i class="fa-regular fa-clock"></i>15min</span>
+          <span><i class="fa-solid fa-brain"></i></i>simple</span>
+          <span><i class="fa-solid fa-calendar"></i>31.05.2025</span>
+          <span><i class="fa-solid fa-chart-column"></i>393kcal</span>
+        </p>
+      </div>
+      <div class="form_rezept">
+        <p> Zutaten für </p>
+          <div class="calculate">
+            <input type="number" name="portion" id="portion_number" value="1" min="1"/>
+            <button id="portion_calculateBtn">Portionen</button>
+          </div>
+      </div>
+      <table id="ingredient_table" class="ingredient_table">
+        <tr>
+          <td></td>
+        </tr>
+
+      </table>
+
+      <div class="zubereitung">
+        <h3 class="title3">Zubereitung</h3>
+        <p class="icons_fa" id="zeit_zubereitung">
+            <span><i class="fa-regular fa-clock"></i>ca. 15 minuten</span>
+            <span><i class="fa-regular fa-clock"></i>gesamtzeit ca. 15 minuten</span>
+        </p>
+        <p class="zutate" id="instructionen">
+            Die Hähnchenbrust in Würfel schneiden, mit 1 EL Paprikapulver bestreuen, mit Salz und Pfeffer würzen und in einer Pfanne braten. Die Paprikaschote würfeln, in eine separate Pfanne geben und ebenfalls braten.
+            Die Tomaten entkernen und in Streifen schneiden. Die Tomaten- und Paprikastreifen zum Hähnchen geben und warmhalten (Achtung, die Tomaten sollen knackig bleiben, nur leicht drin aufwärmen!).
+            Die Gurke würfeln. Mit etwas Öl, Salz, Pfeffer, Zucker, etwas Zitronensaft, Dill und Petersilie vermengen.
+            Den Knoblauch pressen, die Chilischote sehr fein schneiden. Beides in den Joghurt geben. Mit Salz, Pfeffer und einem Spritzer Zitronensaft abschmecken.
+            Das Fladenbrot vierteln und im Backofen aufbacken. Das Fladenbrot mit dem Dip, dem Gurkensalat und der Hähnchenmischung füllen.
+        </p>
+      </div>
+
+      <div class="ersteller">
+          <h4>Rezept erstellt von</h4>
+          <div class="profile">
+              <img src="./img/profile.jpg" alt="profile">
+              <p>Rucel Dev</p>
+          </div>
+      </div>
+    </main>
+    <footer id="footer">
+
+    </footer>
+    <script src="./rezepte.js"></script>
+  </body>
+</html>
