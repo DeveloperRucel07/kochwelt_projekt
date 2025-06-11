@@ -1,7 +1,7 @@
 let rezeptBanner = document.getElementById("rezept_banner");
 let instructionen = document.getElementById("instructionen");
 let zeitZubereitung = document.getElementById("zeit_zubereitung");
-
+let rezeptTages = document.getElementById('rezept_tages');
 let portion = 1;
 let recipes = [
   {
