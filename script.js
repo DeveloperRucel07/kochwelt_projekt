@@ -5,7 +5,7 @@ let headerTag = `
         <a href="./index.html"><img src="./img/logo.png" alt="Logo Kochwelt" /></a>
         <nav class="burger_menu" id="burger_menu">
           <a href="./index.html" class="menu_item active_item">Start</a>
-          <a href="./rezept.html" class="menu_item">Rezept des Tages</a>
+          <a href="./rezept.html?recipeName=Hähnchen-Döner" class="menu_item">Rezept des Tages</a>
           <a href="./kontakt.html" class="menu_item">Kontakt</a>
           <a href="./impressum.html" class="menu_item">Impressum</a>
         </nav>
