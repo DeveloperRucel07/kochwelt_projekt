@@ -18,12 +18,17 @@ sendMessageBtn.addEventListener('click', function() {
     valideBetreff(betreff_user);
     valideMessage(message_user)
 
-    if(validator == true && check >= 3) {
+    if(validator == true && check >= 4) {
         sendmail();
     }
     else{
         error_message.classList.add('dblock_message');
     }
+
+    Name.value = '';
+    Usermail.value = '';
+    Betreff.value = '';
+    Message.value = '';
 
 });
 
