@@ -63,6 +63,9 @@ a{
 #burger_open, #burger_close{
     display: none;
 }
+#errorPortion{
+    color: red;
+}
 .toggle_open{
     display: block;
 }

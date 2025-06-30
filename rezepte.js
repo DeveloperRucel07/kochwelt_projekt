@@ -138,7 +138,6 @@ function recepteSelected(searchName) {
   function updateIngredients(FindRecipe, portion) {
     tableBody.innerHTML = "";
     const ingredients = FindRecipe.ingredients;
-
     for (const [ingredientName, { quantity, unit }] of Object.entries(
       ingredients
     )) {
@@ -163,9 +162,17 @@ function recepteSelected(searchName) {
 
   const calculate = document.getElementById("portion_calculateBtn");
   calculate.addEventListener("click", function () {
-    let number_portion = document.getElementById("portion_number").value;
-    portion = parseInt(number_portion);
-    updateIngredients(FindRecipe, portion);
+    let number_portion = document.getElementById("portion_number");
+    portion = parseInt(number_portion.value);
+    if (portion >= 1 && portion <= 20) {
+      updateIngredients(FindRecipe, portion);
+    } else {
+      document.getElementById("errorPortion").style.display = "block";
+      setTimeout(function () {
+        document.getElementById("errorPortion").style.display = "none";
+      }, 2000);
+    }
+    number_portion.value = "";
   });
 
   updateIngredients(FindRecipe, portion);
