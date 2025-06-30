@@ -1,7 +1,7 @@
 let rezeptBanner = document.getElementById("rezept_banner");
 let instructionen = document.getElementById("instructionen");
 let zeitZubereitung = document.getElementById("zeit_zubereitung");
-let rezeptTages = document.getElementById('rezept_tages');
+let rezeptTages = document.getElementById("rezept_tages");
 let portion = 1;
 let recipes = [
   {
@@ -27,12 +27,12 @@ let recipes = [
     difficulty: "simple",
     date: "20.03.2025",
     kalorie: 600,
-    instruction:  [
+    instruction: [
       "Hähnchenbrust in Streifen schneiden und mit Paprikapulver, Salz und Pfeffer marinieren.",
       "Paprika, Tomaten und Gurke klein schneiden.",
       "Joghurt mit Zitronensaft, Knoblauch, Dill, Petersilie und Zucker zu einer Soße verrühren.",
       "Hähnchenstreifen in einer Pfanne anbraten, bis sie goldbraun sind.",
-      "Dönerbrot aufschneiden, Soße auftragen, Fleisch und Gemüse einfüllen, mit Kräutern garnieren."
+      "Dönerbrot aufschneiden, Soße auftragen, Fleisch und Gemüse einfüllen, mit Kräutern garnieren.",
     ],
   },
   {
@@ -59,12 +59,12 @@ let recipes = [
     difficulty: "simple",
     date: "03.06.2025",
     kalorie: 450,
-    instruction:  [
+    instruction: [
       "Kichererbsen mit Zwiebel, Knoblauch, Kräutern, Gewürzen, Mehl und Backpulver zu einer dicken Masse pürieren.",
       "Kleine Bällchen formen und in heißem Öl goldbraun braten oder frittieren.",
       "Joghurt mit Zitronensaft, Knoblauch und Kräutern zu einer Soße verrühren.",
       "Tomate und Gurke in Scheiben schneiden.",
-      "Fladenbrot mit Soße bestreichen, Falafel und Gemüse einrollen und servieren."
+      "Fladenbrot mit Soße bestreichen, Falafel und Gemüse einrollen und servieren.",
     ],
   },
   {
@@ -95,7 +95,7 @@ let recipes = [
       "Mit Hackfleisch, Tomatenmark, Paprikamark und Gewürzen gut vermengen.",
       "Die Masse gleichmäßig auf dem Fladenbrot verteilen.",
       "Im Ofen bei 220°C ca. 10–15 Minuten backen, bis alles gut gegart ist.",
-      "Mit Zitronensaft, Salat und ggf. Soße belegen, einrollen oder flach servieren."
+      "Mit Zitronensaft, Salat und ggf. Soße belegen, einrollen oder flach servieren.",
     ],
   },
 ];
@@ -103,18 +103,14 @@ let recipes = [
 const params = new URLSearchParams(window.location.search);
 const searchName = params.get("recipeName");
 
-document.addEventListener('DOMContentLoaded', function(){
+document.addEventListener("DOMContentLoaded", function () {
   recepteSelected(searchName);
-})
+});
 
 function recepteSelected(searchName) {
-  let FindRecipe = recipes.find(recipe =>
-    recipe.name.includes(searchName)
-  );
+  let FindRecipe = recipes.find((recipe) => recipe.name.includes(searchName));
 
-  console.log(FindRecipe);
-
-    let rezeptBannerHtml = `
+  let rezeptBannerHtml = `
     <h3 class="title3" id="title">${FindRecipe.name}</h3>
     <img src="${FindRecipe.image}" alt="${FindRecipe.name} image"/>
     <p class="icons_fa">
@@ -125,49 +121,52 @@ function recepteSelected(searchName) {
     </p>
     `;
 
-    let zeitZubereitungHtml = `
+  let zeitZubereitungHtml = `
         <span><i class="fa-regular fa-clock"></i>ca. ${FindRecipe.time} minuten</span>
         <span id="gesamtzeit"><i class="fa-regular fa-clock"></i>gesamtzeit ca.${FindRecipe.time}  minuten</span>
     `;
-    let instructions = `<ol>
-            ${FindRecipe.instruction.map(step => `<li>${step}</li>`).join('')}
-            </ol>`;
+  let instructions = `
+            ${FindRecipe.instruction.map((step) => `<p>${step}</p>`).join("")}
+            `;
 
+  rezeptBanner.innerHTML = rezeptBannerHtml;
+  zeitZubereitung.innerHTML = zeitZubereitungHtml;
+  instructionen.innerHTML = instructions;
 
-    rezeptBanner.innerHTML = rezeptBannerHtml;
-    zeitZubereitung.innerHTML = zeitZubereitungHtml;
-    instructionen.innerHTML = instructions;
+  let tableBody = document.getElementById("ingredient_table");
 
-    let tableBody = document.getElementById("ingredient_table");
+  function updateIngredients(FindRecipe, portion) {
+    tableBody.innerHTML = "";
+    const ingredients = FindRecipe.ingredients;
 
-    function updateIngredients(FindRecipe, portion) {
-        tableBody.innerHTML = "";
-        const ingredients = FindRecipe.ingredients;
+    for (const [ingredientName, { quantity, unit }] of Object.entries(
+      ingredients
+    )) {
+      if (!portion) {
+        const row = document.createElement("tr");
+        row.innerHTML = `<td><span>${quantity} ${unit}</span> ${ingredientName}</td>`;
+        tableBody.appendChild(row);
+      } else {
+        let adjustedQuantity =
+          typeof quantity === "number" ? quantity * portion : quantity;
+        let gesammtzeit = document.getElementById("gesamtzeit");
+        const row = document.createElement("tr");
+        row.innerHTML = `<td><span>${adjustedQuantity} ${unit}</span> ${ingredientName}</td>`;
 
-        for (const [ingredientName, { quantity, unit }] of Object.entries(ingredients)) {
-        if (!portion) {
-            const row = document.createElement("tr");
-            row.innerHTML = `<td><span>${quantity} ${unit}</span> ${ingredientName}</td>`;
-            tableBody.appendChild(row);
-        } else {
-            let adjustedQuantity =typeof quantity === "number" ? quantity * portion : quantity;
-            let gesammtzeit = document.getElementById('gesamtzeit');
-            const row = document.createElement("tr");
-            row.innerHTML = `<td><span>${adjustedQuantity} ${unit}</span> ${ingredientName}</td>`;
-
-            gesammtzeit.innerHTML = `<i class="fa-regular fa-clock"></i>gesamtzeit ca. ${FindRecipe.time* portion}  minuten`;
-            tableBody.appendChild(row);
-        }
-        }
+        gesammtzeit.innerHTML = `<i class="fa-regular fa-clock"></i>gesamtzeit ca. ${
+          FindRecipe.time * portion
+        }  minuten`;
+        tableBody.appendChild(row);
+      }
     }
+  }
 
-    const calculate = document.getElementById("portion_calculateBtn");
-    calculate.addEventListener("click", function () {
-        let number_portion = document.getElementById("portion_number").value;
-        portion = parseInt(number_portion);
-        updateIngredients(FindRecipe, portion);
-    });
-
+  const calculate = document.getElementById("portion_calculateBtn");
+  calculate.addEventListener("click", function () {
+    let number_portion = document.getElementById("portion_number").value;
+    portion = parseInt(number_portion);
     updateIngredients(FindRecipe, portion);
+  });
 
-};
+  updateIngredients(FindRecipe, portion);
+}

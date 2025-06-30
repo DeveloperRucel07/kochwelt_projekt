@@ -271,7 +271,6 @@ td span{
 }
 
 .zutate{
-    padding: 30px;
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -575,12 +574,18 @@ footer{
         margin-right: 0px;
     }
 
+    .menu img{
+        width: 250px;
+        height: 200px;
+        border-radius: 10px;
+    }
+
 
     .calculate{
         display: flex;
         justify-content: center;
         flex-direction: row;
-        width: 90%;
+        width: 80%;
     }
 
     .form_rezept button{
