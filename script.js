@@ -35,74 +35,27 @@ function renderFooter() {
   document.getElementById("footer").innerHTML = footerTag;
 }
 
-
-let randomrecipes = [
-  {
-    name: "Hähnchen-Döner",
-    image: "./img/haehnchen-doener.webp",
-  },
-  {
-    name: "Falafel-Wrap",
-    image: "./img/party-falafel-wraps.webp",
-  },
-  {
-    name: "Lahmacun",
-    image: "./img/lahmacun-selber-machen.webp",
-  }
-
-];
-
-
 document.addEventListener("DOMContentLoaded", function () {
   renderHeader();
-  
   renderFooter();
-  let rezeptTages = document.getElementById('rezept_tages');
-  let randomIndex = Math.floor(Math.random() * randomrecipes.length);
-  let randomRecipe = randomrecipes[randomIndex];
-  rezeptTages.innerHTML = `
-    <section class="rezept">
-            <img src="${randomRecipe.image}" alt="${randomRecipe.name} image" />
-            <div class="rezept-text">
-              <div class="teil_1">
-                  <h3 class="title3">${randomRecipe.name}</h3>
-                  <p>
-                    Schmackhafte ${randomRecipe.name} können auch zu Hause sehr einfach gebacken
-                    werden. Mit circa 30 minuten Aufwand kannst du ein wundervolles
-                    Frühstück zaubern.
-                  </p>
-              </div>
-              
-              <a href="./rezept.html" class="rezept_link">Rezept öffnen</a>
-            </div>
-    </section>
-
-  `;
-
   let burger_open = document.getElementById("burger_open");
   let burger_close = document.getElementById("burger_close");
-  let nav = document.getElementById('burger_menu');
-
+  let nav = document.getElementById("burger_menu");
   burger_open.addEventListener("click", function () {
     burger_open.style.display = "none";
     burger_close.style.display = "block";
-    nav.classList.toggle('nav_active');
-    
+    nav.classList.toggle("nav_active");
   });
-
   burger_close.addEventListener("click", function () {
     burger_close.style.display = "none";
     burger_open.style.display = "block";
-    nav.classList.toggle('nav_active');
+    nav.classList.toggle("nav_active");
   });
-  
   let menuItems = document.querySelectorAll(".menu_item");
-  menuItems.forEach(item => {
-      item.addEventListener("click", () => {
-        // menuItems.forEach(element => element.classList.remove("active_item"));
-        console.log(item.value);
-        item.classList.add("active_item");
-      });
+  menuItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      console.log(item.value);
+      item.classList.add("active_item");
+    });
   });
-
 });

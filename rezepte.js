@@ -100,30 +100,37 @@ let recipes = [
   },
 ];
 
+const params = new URLSearchParams(window.location.search);
+const searchName = params.get("recipeName");
 
+document.addEventListener('DOMContentLoaded', function(){
+  recepteSelected(searchName);
+})
 
-document.addEventListener("DOMContentLoaded", function () {
-    let randomIndex = Math.floor(Math.random() * recipes.length);
-    let randomRecipe = recipes[randomIndex];
-    let recipeName = randomRecipe.name;
+function recepteSelected(searchName) {
+  let FindRecipe = recipes.find(recipe =>
+    recipe.name.includes(searchName)
+  );
+
+  console.log(FindRecipe);
 
     let rezeptBannerHtml = `
-    <h3 class="title3" id="title">${randomRecipe.name}</h3>
-    <img src="${randomRecipe.image}" alt="${randomRecipe.name} image"/>
+    <h3 class="title3" id="title">${FindRecipe.name}</h3>
+    <img src="${FindRecipe.image}" alt="${FindRecipe.name} image"/>
     <p class="icons_fa">
-        <span><i class="fa-regular fa-clock"></i>${randomRecipe.time}min</span>
-        <span><i class="fa-solid fa-brain"></i></i>${randomRecipe.difficulty}</span>
-        <span><i class="fa-solid fa-calendar"></i>${randomRecipe.date}</span>
-        <span><i class="fa-solid fa-chart-column"></i>${randomRecipe.kalorie}kcal</span>
+        <span><i class="fa-regular fa-clock"></i>${FindRecipe.time}min</span>
+        <span><i class="fa-solid fa-brain"></i></i>${FindRecipe.difficulty}</span>
+        <span><i class="fa-solid fa-calendar"></i>${FindRecipe.date}</span>
+        <span><i class="fa-solid fa-chart-column"></i>${FindRecipe.kalorie}kcal</span>
     </p>
     `;
 
     let zeitZubereitungHtml = `
-        <span><i class="fa-regular fa-clock"></i>ca. ${randomRecipe.time} minuten</span>
-        <span id="gesamtzeit"><i class="fa-regular fa-clock"></i>gesamtzeit ca.${randomRecipe.time}  minuten</span>
+        <span><i class="fa-regular fa-clock"></i>ca. ${FindRecipe.time} minuten</span>
+        <span id="gesamtzeit"><i class="fa-regular fa-clock"></i>gesamtzeit ca.${FindRecipe.time}  minuten</span>
     `;
     let instructions = `<ol>
-            ${randomRecipe.instruction.map(step => `<li>${step}</li>`).join('')}
+            ${FindRecipe.instruction.map(step => `<li>${step}</li>`).join('')}
             </ol>`;
 
 
@@ -133,12 +140,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let tableBody = document.getElementById("ingredient_table");
 
-    function updateIngredients(recipeName, portion) {
+    function updateIngredients(FindRecipe, portion) {
         tableBody.innerHTML = "";
-        const recipe = recipes.find(r => r.name === recipeName);
-        if (!recipe) return;
-
-        const ingredients = recipe.ingredients;
+        const ingredients = FindRecipe.ingredients;
 
         for (const [ingredientName, { quantity, unit }] of Object.entries(ingredients)) {
         if (!portion) {
@@ -151,7 +155,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const row = document.createElement("tr");
             row.innerHTML = `<td><span>${adjustedQuantity} ${unit}</span> ${ingredientName}</td>`;
 
-            gesammtzeit.innerHTML = `<i class="fa-regular fa-clock"></i>gesamtzeit ca. ${randomRecipe.time* portion}  minuten`;
+            gesammtzeit.innerHTML = `<i class="fa-regular fa-clock"></i>gesamtzeit ca. ${FindRecipe.time* portion}  minuten`;
             tableBody.appendChild(row);
         }
         }
@@ -161,9 +165,9 @@ document.addEventListener("DOMContentLoaded", function () {
     calculate.addEventListener("click", function () {
         let number_portion = document.getElementById("portion_number").value;
         portion = parseInt(number_portion);
-        updateIngredients(recipeName, portion);
+        updateIngredients(FindRecipe, portion);
     });
 
-    updateIngredients(recipeName, portion);
+    updateIngredients(FindRecipe, portion);
 
-});
+};

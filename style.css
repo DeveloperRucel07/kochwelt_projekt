@@ -45,6 +45,11 @@ nav a:hover, .active_item{
     color: #4E9525;
     box-shadow: 0 4px 0 0;
 }
+a{
+    text-decoration: none;
+    color: black;
+    font-size: 24px;
+}
 
 .burger{
     display: none;
@@ -159,8 +164,8 @@ main{
 
 }
 .menu img{
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 250px;
     border-radius: 10px;
 }
 .menu img:hover{
@@ -174,8 +179,9 @@ main{
 
 .main_rezept{
     max-width: 1440px;
-    margin: auto; 
+    margin: auto;
 }
+
 .banner{
     padding-bottom: 40px;
     box-shadow: 0 1px 0 0 grey;
@@ -265,7 +271,7 @@ td span{
 }
 
 .zutate{
-    padding: 10px;
+    padding: 30px;
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -310,9 +316,18 @@ td span{
     margin: 30px;
 }
 
+.unterschied p{
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+    display: flex;
+    align-items: center;
+}
+
 .unterschied img{
-    width: 200px;
-    height: 200px;
+    width: 400px;
+    height: 300px;
     margin-right: 20px;
     border-radius: 10px;
 }
@@ -479,6 +494,14 @@ footer{
         border-radius:10px;
         border-radius:10px 0 0 10px;
     }
+    .unterschied p{
+        margin-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-left: 0px;
+        margin-right: 0px;
+
+    }
 
 
 
@@ -543,6 +566,13 @@ footer{
         align-items: center;
         flex-direction: column;
         padding: 8px;
+    }
+
+    .unterschied p{
+        padding-left: 0px;
+        padding-right: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
     }
 
 
